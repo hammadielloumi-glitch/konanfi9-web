@@ -1,0 +1,8 @@
+/workspace/konanfi9-web/.env.example:3:NEXT_PUBLIC_API_BASE_URL=
+/workspace/konanfi9-web/.env.local:2:# NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
+/workspace/konanfi9-web/README.md:40:NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
+/workspace/konanfi9-web/README.md:48:- Base URL: `process.env.NEXT_PUBLIC_API_BASE_URL`
+/workspace/konanfi9-web/src/app/health/page.tsx:19:  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || '';
+/workspace/konanfi9-web/src/app/tester/page.tsx:16:  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || '';
+/workspace/konanfi9-web/src/lib/api.ts:3: * - Base URL: process.env.NEXT_PUBLIC_API_BASE_URL
+/workspace/konanfi9-web/src/lib/api.ts:42:  const baseUrl = options.baseUrl ?? process.env.NEXT_PUBLIC_API_BASE_URL ?? '';

@@ -1,0 +1,16 @@
+/workspace/tmp/backend_konanFI9/app
+/workspace/tmp/backend_konanFI9/app/agents
+/workspace/tmp/backend_konanFI9/app/agents/domains
+/workspace/tmp/backend_konanFI9/app/api
+/workspace/tmp/backend_konanFI9/app/api/routes
+/workspace/tmp/backend_konanFI9/app/assets
+/workspace/tmp/backend_konanFI9/app/core
+/workspace/tmp/backend_konanFI9/app/data
+/workspace/tmp/backend_konanFI9/app/data/corpus
+/workspace/tmp/backend_konanFI9/app/db
+/workspace/tmp/backend_konanFI9/app/models
+/workspace/tmp/backend_konanFI9/app/routers
+/workspace/tmp/backend_konanFI9/app/schemas
+/workspace/tmp/backend_konanFI9/app/services
+/workspace/tmp/backend_konanFI9/app/utils
+/workspace/tmp/backend_konanFI9/app/vector

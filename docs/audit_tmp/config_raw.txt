@@ -1,0 +1,112 @@
+/workspace/tmp/backend_konanFI9/app/api/auth.py:6:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/api/auth.py:9:from app.database import get_db
+/workspace/tmp/backend_konanFI9/app/api/auth.py:36:def register_user(p: UserCreate, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/auth.py:57:def login_user(p: Login, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/auth.py:74:def _user_from_token(creds: HTTPAuthorizationCredentials | None, db: Session) -> User:
+/workspace/tmp/backend_konanFI9/app/api/auth.py:94:def _current_user(creds: HTTPAuthorizationCredentials = Depends(bearer), db: Session = Depends(get_db)) -> User:
+/workspace/tmp/backend_konanFI9/app/api/auth.py:100:    db: Session = Depends(get_db),
+/workspace/tmp/backend_konanFI9/app/api/auth_seed.py:2:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/api/auth_seed.py:4:from app.database import get_db
+/workspace/tmp/backend_konanFI9/app/api/auth_seed.py:12:def seed_test_user(db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/files.py:7:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/api/files.py:8:from app.db.session import get_db
+/workspace/tmp/backend_konanFI9/app/api/files.py:21:async def upload_file(file: UploadFile = File(...), db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/files.py:54:def list_files(db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/files.py:70:def delete_file(file_id: int, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/health.py:2:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/api/health.py:3:from app.database import get_db
+/workspace/tmp/backend_konanFI9/app/api/health.py:8:def health_check(db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/laws.py:6:from app.database import get_db
+/workspace/tmp/backend_konanFI9/app/api/laws.py:49:    db = next(get_db())
+/workspace/tmp/backend_konanFI9/app/api/laws.py:56:    db = next(get_db())
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:14:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:16:from app.database import SessionLocal
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:336:            db: Session = SessionLocal()
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:6:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:9:from app.database import get_db
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:25:    db: Session = Depends(get_db),
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:57:async def create_conversation(request: Request, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:83:def update_conversation(conv_id: int, data: dict, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:100:def delete_conversation(conv_id: int, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:115:    db: Session = Depends(get_db),
+/workspace/tmp/backend_konanFI9/app/api.py:3:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/api.py:4:from .db import get_db, Base, engine
+/workspace/tmp/backend_konanFI9/app/api.py:15:Base.metadata.create_all(bind=engine)
+/workspace/tmp/backend_konanFI9/app/api.py:20:def register(data: UserCreate, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api.py:31:def login(data: UserCreate, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api.py:41:def seed_laws(db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/audit_db.py:3:from sqlalchemy import create_engine, inspect, text
+/workspace/tmp/backend_konanFI9/app/audit_db.py:24:    engine = create_engine(DATABASE_URL)
+/workspace/tmp/backend_konanFI9/app/audit_db.py:25:    with engine.connect() as conn:
+/workspace/tmp/backend_konanFI9/app/audit_db.py:35:    inspector = inspect(engine)
+/workspace/tmp/backend_konanFI9/app/config.py:2:from pydantic_settings import BaseSettings, SettingsConfigDict
+/workspace/tmp/backend_konanFI9/app/config.py:4:from .core.config import Settings, settings
+/workspace/tmp/backend_konanFI9/app/config.py:7:class Settings(BaseSettings):
+/workspace/tmp/backend_konanFI9/app/config.py:41:    model_config = SettingsConfigDict(
+/workspace/tmp/backend_konanFI9/app/config.py:77:settings = Settings()
+/workspace/tmp/backend_konanFI9/app/core/chroma_client.py:3:from chromadb.config import Settings
+/workspace/tmp/backend_konanFI9/app/core/config.py:2:from pydantic_settings import BaseSettings, SettingsConfigDict
+/workspace/tmp/backend_konanFI9/app/core/config.py:7:class Settings(BaseSettings):
+/workspace/tmp/backend_konanFI9/app/core/config.py:34:    model_config = SettingsConfigDict(
+/workspace/tmp/backend_konanFI9/app/core/config.py:58:settings = Settings()
+/workspace/tmp/backend_konanFI9/app/crud.py:1:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/crud.py:4:def create_conversation(db: Session, session_id: str, role: str, message_user: str = None, message_konan: str = None):
+/workspace/tmp/backend_konanFI9/app/crud.py:16:def get_conversations(db: Session, session_id: str):
+/workspace/tmp/backend_konanFI9/app/database.py:7:from sqlalchemy import create_engine
+/workspace/tmp/backend_konanFI9/app/database.py:8:from sqlalchemy.orm import sessionmaker, declarative_base
+/workspace/tmp/backend_konanFI9/app/database.py:41:engine = create_engine(DATABASE_URL, pool_pre_ping=True, echo=False)
+/workspace/tmp/backend_konanFI9/app/database.py:42:SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+/workspace/tmp/backend_konanFI9/app/database.py:43:Base = declarative_base()
+/workspace/tmp/backend_konanFI9/app/database.py:46:def get_db():
+/workspace/tmp/backend_konanFI9/app/database.py:47:    db = SessionLocal()
+/workspace/tmp/backend_konanFI9/app/db/__init__.py:1:from sqlalchemy import create_engine
+/workspace/tmp/backend_konanFI9/app/db/__init__.py:2:from sqlalchemy.orm import declarative_base
+/workspace/tmp/backend_konanFI9/app/db/__init__.py:3:from sqlalchemy.orm import sessionmaker
+/workspace/tmp/backend_konanFI9/app/db/__init__.py:6:# --- Configuration de la base PostgreSQL ---
+/workspace/tmp/backend_konanFI9/app/db/__init__.py:16:engine = create_engine(DATABASE_URL)
+/workspace/tmp/backend_konanFI9/app/db/__init__.py:17:SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+/workspace/tmp/backend_konanFI9/app/db/__init__.py:20:Base = declarative_base()
+/workspace/tmp/backend_konanFI9/app/db/__init__.py:23:def get_db():
+/workspace/tmp/backend_konanFI9/app/db/__init__.py:24:    db = SessionLocal()
+/workspace/tmp/backend_konanFI9/app/db/base.py:4:from sqlalchemy.orm import declarative_base
+/workspace/tmp/backend_konanFI9/app/db/base.py:6:Base = declarative_base()
+/workspace/tmp/backend_konanFI9/app/db/session.py:3:from sqlalchemy import create_engine
+/workspace/tmp/backend_konanFI9/app/db/session.py:4:from sqlalchemy.orm import declarative_base, sessionmaker
+/workspace/tmp/backend_konanFI9/app/db/session.py:8:engine = create_engine(settings.db_url, pool_pre_ping=True, connect_args=_connect_args)
+/workspace/tmp/backend_konanFI9/app/db/session.py:9:SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
+/workspace/tmp/backend_konanFI9/app/db/session.py:10:Base = declarative_base()
+/workspace/tmp/backend_konanFI9/app/db/session.py:12:def get_db() -> Generator:
+/workspace/tmp/backend_konanFI9/app/db/session.py:13:    db = SessionLocal()
+/workspace/tmp/backend_konanFI9/app/main.py:19:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/main.py:24:from app.database import get_db, engine
+/workspace/tmp/backend_konanFI9/app/main.py:54:logging.basicConfig(filename=LOG_FILE, level=logging.INFO, format="%(message)s", encoding="utf-8")
+/workspace/tmp/backend_konanFI9/app/main.py:133:    with engine.connect() as conn:
+/workspace/tmp/backend_konanFI9/app/memory.py:2:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/memory.py:5:def add_message(db: Session, session_id: str, role: str, message: str):
+/workspace/tmp/backend_konanFI9/app/memory.py:12:def get_history(db: Session, session_id: str, limit: int = 5):
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:6:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:7:from app.database import get_db
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:27:def get_conversation_history(db: Session, session_id: str, limit: int = 10):
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:52:async def chat_endpoint(request: ChatRequest, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/routers/files.py:3:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/routers/files.py:5:from app.database import get_db
+/workspace/tmp/backend_konanFI9/app/routers/files.py:12:def get_uploaded_file(file_id: str, db: Session = Depends(get_db), user=Depends(verify_jwt)):
+/workspace/tmp/backend_konanFI9/app/routers/memory_vector.py:5:from chromadb.config import Settings
+/workspace/tmp/backend_konanFI9/app/routers/memory_vector.py:15:    Settings(
+/workspace/tmp/backend_konanFI9/app/routers/stripe_router.py:45:        session = stripe.checkout.Session.create(
+/workspace/tmp/backend_konanFI9/app/routers/stripe_router.py:97:        session = stripe.checkout.Session.retrieve(session_id)
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:2:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:3:from app.database import get_db
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:11:def register(user: UserCreate, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:23:def login(data: UserLogin, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:31:def me(db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/schemas/law_schema.py:11:    class Config:
+/workspace/tmp/backend_konanFI9/app/schemas/user.py:19:    class Config:
+/workspace/tmp/backend_konanFI9/app/schemas/user_schemas.py:23:    class Config:
+/workspace/tmp/backend_konanFI9/app/session.py:1:from sqlalchemy.orm import Session
+/workspace/tmp/backend_konanFI9/app/session.py:5:def add_message(db: Session, session_id: str, sender: str, message: str):
+/workspace/tmp/backend_konanFI9/app/session.py:22:def get_history(db: Session, session_id: str):
+/workspace/tmp/backend_konanFI9/app/vector/chroma_manager.py:7:from chromadb.config import Settings
+/workspace/tmp/backend_konanFI9/app/vector/chroma_manager.py:20:        Settings(
+/workspace/tmp/backend_konanFI9/app/vector/chroma_manager.py:139:from chromadb.config import Settings
+/workspace/tmp/backend_konanFI9/app/vector/chroma_manager.py:152:        Settings(

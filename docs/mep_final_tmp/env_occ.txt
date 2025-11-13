@@ -1,0 +1,8 @@
+3:NEXT_PUBLIC_API_BASE_URL=
+2:# NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
+40:NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
+48:- Base URL: `process.env.NEXT_PUBLIC_API_BASE_URL`
+19:  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || '';
+16:  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || '';
+3: * - Base URL: process.env.NEXT_PUBLIC_API_BASE_URL
+42:  const baseUrl = options.baseUrl ?? process.env.NEXT_PUBLIC_API_BASE_URL ?? '';

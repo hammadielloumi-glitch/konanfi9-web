@@ -1,0 +1,81 @@
+/workspace/tmp/backend_konanFI9/app/agents/domains/administratif.py:2:class AdministratifAgent(BaseAgent):
+/workspace/tmp/backend_konanFI9/app/agents/domains/civil.py:2:class CivilAgent(BaseAgent):
+/workspace/tmp/backend_konanFI9/app/agents/domains/commercial.py:2:class CommercialAgent(BaseAgent):
+/workspace/tmp/backend_konanFI9/app/agents/domains/constitution.py:2:class ConstitutionAgent(BaseAgent):
+/workspace/tmp/backend_konanFI9/app/agents/domains/famille.py:2:class FamilleAgent(BaseAgent):
+/workspace/tmp/backend_konanFI9/app/agents/domains/fiscalite.py:2:class FiscaliteAgent(BaseAgent):
+/workspace/tmp/backend_konanFI9/app/agents/domains/immobilier.py:2:class ImmobilierAgent(BaseAgent):
+/workspace/tmp/backend_konanFI9/app/agents/domains/penal.py:2:class PenalAgent(BaseAgent):
+/workspace/tmp/backend_konanFI9/app/agents/domains/travail.py:2:class TravailAgent(BaseAgent):
+/workspace/tmp/backend_konanFI9/app/api/api.py:2:from app.services.search import semantic_search, upsert_documents
+/workspace/tmp/backend_konanFI9/app/api/auth.py:10:from app.models.user import User
+/workspace/tmp/backend_konanFI9/app/api/auth.py:12:from app.utils.auth_bypass import optional_user
+/workspace/tmp/backend_konanFI9/app/api/auth.py:21:class UserCreate(BaseModel):
+/workspace/tmp/backend_konanFI9/app/api/auth.py:27:class Login(BaseModel):
+/workspace/tmp/backend_konanFI9/app/api/auth_seed.py:5:from app.models.user import User, PlanType
+/workspace/tmp/backend_konanFI9/app/api/files.py:9:from app.models.file_upload import FileUpload
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:15:from app.models.law_diff_log import LawDiffLog
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:10:from app.models.conversation import Conversation
+/workspace/tmp/backend_konanFI9/app/api/search.py:2:from app.services.search import semantic_search, upsert_documents
+/workspace/tmp/backend_konanFI9/app/api.py:5:from .models import User, LawArticle
+/workspace/tmp/backend_konanFI9/app/api.py:6:from .schemas import UserCreate, Token, ChatRequest, ChatResponse, PDFRequest, UserOut
+/workspace/tmp/backend_konanFI9/app/api.py:8:from .services.search import semantic_search, upsert_documents
+/workspace/tmp/backend_konanFI9/app/api.py:9:from .services.openai_client import chat_completion
+/workspace/tmp/backend_konanFI9/app/api.py:10:from .services.pdf import make_simple_pdf
+/workspace/tmp/backend_konanFI9/app/config.py:7:class Settings(BaseSettings):
+/workspace/tmp/backend_konanFI9/app/core/config.py:7:class Settings(BaseSettings):
+/workspace/tmp/backend_konanFI9/app/crud.py:2:from app.models import Conversation
+/workspace/tmp/backend_konanFI9/app/main.py:25:from app.models import Conversation
+/workspace/tmp/backend_konanFI9/app/main.py:26:from app.schemas import ChatRequest
+/workspace/tmp/backend_konanFI9/app/memory.py:3:from app import models
+/workspace/tmp/backend_konanFI9/app/memory.py:6:    conv = models.Conversation(session_id=session_id, role=role, message=message)
+/workspace/tmp/backend_konanFI9/app/memory.py:14:        db.query(models.Conversation)
+/workspace/tmp/backend_konanFI9/app/memory.py:15:        .filter(models.Conversation.session_id == session_id)
+/workspace/tmp/backend_konanFI9/app/memory.py:16:        .order_by(models.Conversation.created_at.desc())
+/workspace/tmp/backend_konanFI9/app/models/__init__.py:1:from app.models.conversation import Conversation
+/workspace/tmp/backend_konanFI9/app/models/__init__.py:2:from app.models.user import User
+/workspace/tmp/backend_konanFI9/app/models/__init__.py:3:from app.models.file_upload import FileUpload  # ✅ ajout ici
+/workspace/tmp/backend_konanFI9/app/models/conversation.py:1:# app/models/conversation.py
+/workspace/tmp/backend_konanFI9/app/models/conversation.py:8:class Conversation(Base):
+/workspace/tmp/backend_konanFI9/app/models/file_upload.py:4:class FileUpload(Base):
+/workspace/tmp/backend_konanFI9/app/models/law.py:5:class LawArticle(Base):
+/workspace/tmp/backend_konanFI9/app/models/law_article.py:4:class LawArticle(Base):
+/workspace/tmp/backend_konanFI9/app/models/law_diff_log.py:2:# app/models/law_diff_log.py — Historique des comparaisons de lois
+/workspace/tmp/backend_konanFI9/app/models/law_diff_log.py:8:class LawDiffLog(Base):
+/workspace/tmp/backend_konanFI9/app/models/user.py:11:class User(Base):
+/workspace/tmp/backend_konanFI9/app/models.py:1:# app/models.py
+/workspace/tmp/backend_konanFI9/app/models.py:6:class Conversation(Base):
+/workspace/tmp/backend_konanFI9/app/models.py:17:class LawArticle(Base):
+/workspace/tmp/backend_konanFI9/app/models.py:28:class RefLanguage(Base):
+/workspace/tmp/backend_konanFI9/app/models.py:37:class CurrentArticlesV(Base):
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:8:from app.models import Conversation
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:9:from app.schemas import ChatRequest, ChatResponse
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:10:from app.utils.lang_detector import detect_language
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:14:from app.services.llm_service import call_llm_api
+/workspace/tmp/backend_konanFI9/app/routers/files.py:4:from app.models import FileUpload  # table que tu as utilisée pour stocker les fichiers
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:4:from app.models.user import User, PlanType
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:5:from app.schemas.user_schemas import UserCreate, UserLogin, UserResponse
+/workspace/tmp/backend_konanFI9/app/schemas/__init__.py:2:# app/schemas/__init__.py — Modèles de base pour l'API Konan
+/workspace/tmp/backend_konanFI9/app/schemas/__init__.py:6:class ChatRequest(BaseModel):
+/workspace/tmp/backend_konanFI9/app/schemas/__init__.py:10:class ChatResponse(BaseModel):
+/workspace/tmp/backend_konanFI9/app/schemas/diff_schema.py:3:class LawDiffItem(BaseModel):
+/workspace/tmp/backend_konanFI9/app/schemas/law_schema.py:3:class LawArticleIn(BaseModel):
+/workspace/tmp/backend_konanFI9/app/schemas/user.py:2:# app/schemas/user.py — Schémas Pydantic (Konan API)
+/workspace/tmp/backend_konanFI9/app/schemas/user.py:8:class UserCreate(BaseModel):
+/workspace/tmp/backend_konanFI9/app/schemas/user.py:13:class UserOut(BaseModel):
+/workspace/tmp/backend_konanFI9/app/schemas/user.py:22:class Login(BaseModel):
+/workspace/tmp/backend_konanFI9/app/schemas/user.py:26:class Token(BaseModel):
+/workspace/tmp/backend_konanFI9/app/schemas/user_schemas.py:9:class UserCreate(BaseModel):
+/workspace/tmp/backend_konanFI9/app/schemas/user_schemas.py:14:class UserLogin(BaseModel):
+/workspace/tmp/backend_konanFI9/app/schemas/user_schemas.py:18:class UserResponse(BaseModel):
+/workspace/tmp/backend_konanFI9/app/schemas.py:2:# app/schemas.py — Phase 3 stable finale
+/workspace/tmp/backend_konanFI9/app/schemas.py:7:class ChatRequest(BaseModel):
+/workspace/tmp/backend_konanFI9/app/schemas.py:11:class ChatResponse(BaseModel):
+/workspace/tmp/backend_konanFI9/app/services/llm_service.py:1:# app/services/llm_service.py
+/workspace/tmp/backend_konanFI9/app/services/search.py:1:# app/services/search.py
+/workspace/tmp/backend_konanFI9/app/services/search.py:4:from chromadb.utils import embedding_functions
+/workspace/tmp/backend_konanFI9/app/session.py:2:from app.models.conversation import Conversation
+/workspace/tmp/backend_konanFI9/app/utils/auth_bypass.py:7:from app.models.user import User, PlanType
+/workspace/tmp/backend_konanFI9/app/vector/index_laws.py:2:from app.utils.parser import iter_jsonl
+/workspace/tmp/backend_konanFI9/app/vector/index_laws.py:3:from app.utils.cleaner import clean_record
+/workspace/tmp/backend_konanFI9/app/vector/update_scheduler.py:5:from app.utils.jort_scraper import fetch_to_jsonl

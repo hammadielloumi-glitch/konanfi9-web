@@ -1,0 +1,78 @@
+/workspace/tmp/backend_konanFI9/app/api/auth.py:4:from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+/workspace/tmp/backend_konanFI9/app/api/auth.py:11:from app.core.security import hash_password, verify_password, create_access_token, decode_token
+/workspace/tmp/backend_konanFI9/app/api/auth.py:15:bearer = HTTPBearer(auto_error=False)
+/workspace/tmp/backend_konanFI9/app/api/auth.py:23:    password: str
+/workspace/tmp/backend_konanFI9/app/api/auth.py:29:    password: str
+/workspace/tmp/backend_konanFI9/app/api/auth.py:43:        hashed_password=hash_password(p.password),
+/workspace/tmp/backend_konanFI9/app/api/auth.py:48:    db.refresh(u)
+/workspace/tmp/backend_konanFI9/app/api/auth.py:60:    if not u or not verify_password(p.password, u.hashed_password):
+/workspace/tmp/backend_konanFI9/app/api/auth.py:63:    token = create_access_token(subject=str(u.id))
+/workspace/tmp/backend_konanFI9/app/api/auth.py:65:        "access_token": token,
+/workspace/tmp/backend_konanFI9/app/api/auth.py:66:        "token_type": "bearer",
+/workspace/tmp/backend_konanFI9/app/api/auth.py:74:def _user_from_token(creds: HTTPAuthorizationCredentials | None, db: Session) -> User:
+/workspace/tmp/backend_konanFI9/app/api/auth.py:78:    data = decode_token(creds.credentials)
+/workspace/tmp/backend_konanFI9/app/api/auth.py:95:    return _user_from_token(creds, db)
+/workspace/tmp/backend_konanFI9/app/api/auth.py:104:    return _user_from_token(creds, db)
+/workspace/tmp/backend_konanFI9/app/api/auth_seed.py:6:from app.core.security import hash_password
+/workspace/tmp/backend_konanFI9/app/api/auth_seed.py:19:    password = "KING"
+/workspace/tmp/backend_konanFI9/app/api/auth_seed.py:31:        hashed_password=hash_password(password),
+/workspace/tmp/backend_konanFI9/app/api/auth_seed.py:38:    db.refresh(new_user)
+/workspace/tmp/backend_konanFI9/app/api/files.py:37:        db.refresh(new_file)
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:41:SMTP_PASS = os.getenv("SMTP_PASS", "password-placeholder")
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:70:    db.refresh(conv)
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:92:    db.refresh(conv)
+/workspace/tmp/backend_konanFI9/app/api.py:7:from .core.security import hash_password, verify_password, create_access_token
+/workspace/tmp/backend_konanFI9/app/api.py:23:    user = User(email=data.email, hashed_password=hash_password(data.password))
+/workspace/tmp/backend_konanFI9/app/api.py:26:    db.refresh(user)
+/workspace/tmp/backend_konanFI9/app/api.py:33:    if not user or not verify_password(data.password, user.hashed_password):
+/workspace/tmp/backend_konanFI9/app/api.py:34:        raise HTTPException(status_code=400, detail="Incorrect email or password")
+/workspace/tmp/backend_konanFI9/app/api.py:35:    token = create_access_token({"sub": user.email})
+/workspace/tmp/backend_konanFI9/app/api.py:36:    return {"access_token": token, "token_type": "bearer"}
+/workspace/tmp/backend_konanFI9/app/config.py:14:    JWT_SECRET: str
+/workspace/tmp/backend_konanFI9/app/config.py:15:    JWT_ALGORITHM: str = "HS256"
+/workspace/tmp/backend_konanFI9/app/core/config.py:13:    JWT_SECRET: str = os.getenv("JWT_SECRET", "default_jwt_secret")
+/workspace/tmp/backend_konanFI9/app/core/config.py:14:    JWT_ALGORITHM: str = "HS256"
+/workspace/tmp/backend_konanFI9/app/core/security.py:6:from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+/workspace/tmp/backend_konanFI9/app/core/security.py:7:from jose import JWTError, jwt
+/workspace/tmp/backend_konanFI9/app/core/security.py:11:bearer_scheme = HTTPBearer(auto_error=True)
+/workspace/tmp/backend_konanFI9/app/core/security.py:13:SECRET_KEY = os.getenv("JWT_SECRET", "change-me")
+/workspace/tmp/backend_konanFI9/app/core/security.py:14:ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
+/workspace/tmp/backend_konanFI9/app/core/security.py:15:ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("JWT_ACCESS_TOKEN_EXPIRE_MINUTES", "1440"))
+/workspace/tmp/backend_konanFI9/app/core/security.py:18:def hash_password(password: str) -> str:
+/workspace/tmp/backend_konanFI9/app/core/security.py:19:    return pwd_context.hash(password)
+/workspace/tmp/backend_konanFI9/app/core/security.py:22:def verify_password(plain_password: str, hashed_password: str) -> bool:
+/workspace/tmp/backend_konanFI9/app/core/security.py:24:        return pwd_context.verify(plain_password, hashed_password)
+/workspace/tmp/backend_konanFI9/app/core/security.py:29:def create_access_token(
+/workspace/tmp/backend_konanFI9/app/core/security.py:48:def decode_token(token: str) -> Dict[str, Any]:
+/workspace/tmp/backend_konanFI9/app/core/security.py:49:    return jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+/workspace/tmp/backend_konanFI9/app/core/security.py:53:    token = credentials.credentials
+/workspace/tmp/backend_konanFI9/app/core/security.py:55:        data = decode_token(token)
+/workspace/tmp/backend_konanFI9/app/core/security.py:58:            raise JWTError("Subject must be a string.")
+/workspace/tmp/backend_konanFI9/app/core/security.py:60:    except JWTError as exc:
+/workspace/tmp/backend_konanFI9/app/core/security.py:63:            detail="Invalid or expired token",
+/workspace/tmp/backend_konanFI9/app/crud.py:13:    db.refresh(conv)
+/workspace/tmp/backend_konanFI9/app/memory.py:9:    db.refresh(conv)
+/workspace/tmp/backend_konanFI9/app/models/user.py:17:    hashed_password = Column(String(255), nullable=False)
+/workspace/tmp/backend_konanFI9/app/routers/auth_router.py:12:    password = data.get("password")
+/workspace/tmp/backend_konanFI9/app/routers/auth_router.py:13:    if email and password:
+/workspace/tmp/backend_konanFI9/app/routers/auth_router.py:17:# /auth/me → renvoie 403 si pas de token
+/workspace/tmp/backend_konanFI9/app/routers/auth_router.py:23:def get_current_user(token: str = Depends(lambda: None)):
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:6:from app.core.security import hash_password, verify_password, create_access_token
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:15:    hashed = hash_password(user.password)
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:16:    db_user = User(email=user.email, hashed_password=hashed, full_name=user.full_name)
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:19:    db.refresh(db_user)
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:25:    if not user or not verify_password(data.password, user.hashed_password):
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:27:    token = create_access_token({"sub": str(user.id)})
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:28:    return {"access_token": token, "token_type": "bearer", "plan": user.plan.value}
+/workspace/tmp/backend_konanFI9/app/schemas/user.py:10:    password: str
+/workspace/tmp/backend_konanFI9/app/schemas/user.py:24:    password: str
+/workspace/tmp/backend_konanFI9/app/schemas/user.py:27:    access_token: str
+/workspace/tmp/backend_konanFI9/app/schemas/user.py:28:    token_type: str = "bearer"
+/workspace/tmp/backend_konanFI9/app/schemas/user_schemas.py:11:    password: str
+/workspace/tmp/backend_konanFI9/app/schemas/user_schemas.py:16:    password: str
+/workspace/tmp/backend_konanFI9/app/services/llm_service.py:30:        "Authorization": f"Bearer {API_KEY}",
+/workspace/tmp/backend_konanFI9/app/services/llm_service.py:37:        "max_tokens": MAX_TOKENS,
+/workspace/tmp/backend_konanFI9/app/services/openai_client.py:9:    headers = {"Authorization": f"Bearer {settings.OPENAI_API_KEY}", "Content-Type": "application/json"}
+/workspace/tmp/backend_konanFI9/app/session.py:17:    db.refresh(new_message)
+/workspace/tmp/backend_konanFI9/app/utils/auth_bypass.py:15:    hashed_password="",
+/workspace/tmp/backend_konanFI9/app/vector/embeddings.py:20:    headers = {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type":"application/json"}

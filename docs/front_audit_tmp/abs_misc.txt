@@ -1,0 +1,7 @@
+/workspace/konanfi9-web/.env.example:2:# Base URL of the backend API, e.g. http://localhost:3001 or https://api.example.com
+/workspace/konanfi9-web/.env.local:2:# NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
+/workspace/konanfi9-web/README.md:40:NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
+/workspace/konanfi9-web/docs/front_audit_tmp/abs_workspace.txt:1131:/workspace/konanfi9-web/docs/front_audit_tmp/env_usage.txt:2:/workspace/konanfi9-web/.env.local:2:# NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
+/workspace/konanfi9-web/docs/front_audit_tmp/abs_workspace.txt:1132:/workspace/konanfi9-web/docs/front_audit_tmp/env_usage.txt:3:/workspace/konanfi9-web/README.md:40:NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
+/workspace/konanfi9-web/docs/front_audit_tmp/env_usage.txt:2:/workspace/konanfi9-web/.env.local:2:# NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
+/workspace/konanfi9-web/docs/front_audit_tmp/env_usage.txt:3:/workspace/konanfi9-web/README.md:40:NEXT_PUBLIC_API_BASE_URL=http://localhost:3001

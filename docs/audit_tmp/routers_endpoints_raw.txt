@@ -1,0 +1,105 @@
+/workspace/tmp/backend_konanFI9/app/api/admin_update.py:1:from fastapi import APIRouter, Header, HTTPException
+/workspace/tmp/backend_konanFI9/app/api/admin_update.py:6:router = APIRouter(prefix="/api/admin", tags=["admin"])
+/workspace/tmp/backend_konanFI9/app/api/admin_update.py:14:@router.post("/reindex")
+/workspace/tmp/backend_konanFI9/app/api/admin_update.py:20:@router.post("/update")
+/workspace/tmp/backend_konanFI9/app/api/api.py:1:from fastapi import APIRouter
+/workspace/tmp/backend_konanFI9/app/api/api.py:4:router = APIRouter(prefix="/search", tags=["search"])
+/workspace/tmp/backend_konanFI9/app/api/api.py:6:@router.post("/upsert")
+/workspace/tmp/backend_konanFI9/app/api/api.py:15:@router.get("/")
+/workspace/tmp/backend_konanFI9/app/api/auth.py:3:from fastapi import APIRouter, Depends, HTTPException, status
+/workspace/tmp/backend_konanFI9/app/api/auth.py:14:router = APIRouter(tags=["Auth"])
+/workspace/tmp/backend_konanFI9/app/api/auth.py:35:@router.post("/register")
+/workspace/tmp/backend_konanFI9/app/api/auth.py:56:@router.post("/login")
+/workspace/tmp/backend_konanFI9/app/api/auth.py:110:@router.get("/me")
+/workspace/tmp/backend_konanFI9/app/api/auth_seed.py:1:from fastapi import APIRouter, Depends
+/workspace/tmp/backend_konanFI9/app/api/auth_seed.py:8:router = APIRouter(tags=["Auth Seed"])
+/workspace/tmp/backend_konanFI9/app/api/auth_seed.py:11:@router.post("/seed-test-user")
+/workspace/tmp/backend_konanFI9/app/api/files.py:6:from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
+/workspace/tmp/backend_konanFI9/app/api/files.py:11:router = APIRouter(tags=["Files"])
+/workspace/tmp/backend_konanFI9/app/api/files.py:20:@router.post("/upload", summary="Uploader un fichier vers le serveur")
+/workspace/tmp/backend_konanFI9/app/api/files.py:53:@router.get("/list", summary="Lister les fichiers enregistrés")
+/workspace/tmp/backend_konanFI9/app/api/files.py:69:@router.delete("/{file_id}", summary="Supprimer un fichier")
+/workspace/tmp/backend_konanFI9/app/api/health.py:1:from fastapi import APIRouter, Depends
+/workspace/tmp/backend_konanFI9/app/api/health.py:5:router = APIRouter()
+/workspace/tmp/backend_konanFI9/app/api/health.py:7:@router.get("/health")
+/workspace/tmp/backend_konanFI9/app/api/laws.py:4:from fastapi import APIRouter, HTTPException, Query, Header
+/workspace/tmp/backend_konanFI9/app/api/laws.py:10:router = APIRouter(prefix="/api/laws", tags=["Lois tunisiennes"])
+/workspace/tmp/backend_konanFI9/app/api/laws.py:18:@router.get("/search")
+/workspace/tmp/backend_konanFI9/app/api/laws.py:27:@router.post("/reindex")
+/workspace/tmp/backend_konanFI9/app/api/laws.py:37:@router.get("/stats")
+/workspace/tmp/backend_konanFI9/app/api/laws.py:47:@router.get("/all")
+/workspace/tmp/backend_konanFI9/app/api/laws.py:54:@router.get("/{law_id}")
+/workspace/tmp/backend_konanFI9/app/api/laws_ws.py:4:from fastapi import APIRouter, WebSocket, WebSocketDisconnect
+/workspace/tmp/backend_konanFI9/app/api/laws_ws.py:7:router = APIRouter(prefix="/ws", tags=["WebSocket Notifications"])
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:12:from fastapi import APIRouter, Query, HTTPException, Header
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:19:router = APIRouter(prefix="/api", tags=["Lois tunisiennes"])
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:85:@router.get("/search_law")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:93:@router.post("/index_laws")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:107:@router.delete("/reset_laws")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:124:@router.get("/stats_laws")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:178:@router.get("/notifications")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:193:@router.post("/notifications/mark_as_read")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:217:@router.post("/load_laws_from_url")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:283:@router.post("/laws/compare_version")
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:5:from fastapi import APIRouter, Depends, HTTPException, Query, Request
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:13:router = APIRouter(
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:23:@router.get("")
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:56:@router.post("")
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:82:@router.patch("/{conv_id}")
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:99:@router.delete("/{conv_id}")
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:112:@router.get("/{conv_id}/messages")
+/workspace/tmp/backend_konanFI9/app/api/search.py:1:from fastapi import APIRouter
+/workspace/tmp/backend_konanFI9/app/api/search.py:4:router = APIRouter(prefix="/search", tags=["search"])
+/workspace/tmp/backend_konanFI9/app/api/search.py:6:@router.post("/upsert")
+/workspace/tmp/backend_konanFI9/app/api/search.py:15:@router.get("/")
+/workspace/tmp/backend_konanFI9/app/api.py:1:from fastapi import APIRouter, Depends, HTTPException
+/workspace/tmp/backend_konanFI9/app/api.py:14:router = APIRouter()
+/workspace/tmp/backend_konanFI9/app/api.py:19:@router.post("/auth/register", response_model=UserOut)
+/workspace/tmp/backend_konanFI9/app/api.py:30:@router.post("/auth/login", response_model=Token)
+/workspace/tmp/backend_konanFI9/app/api.py:40:@router.post("/seed")
+/workspace/tmp/backend_konanFI9/app/api.py:64:@router.post("/chat", response_model=ChatResponse)
+/workspace/tmp/backend_konanFI9/app/api.py:89:@router.post("/pdf")
+/workspace/tmp/backend_konanFI9/app/main.py:115:app.include_router(auth_router, prefix="/api/auth", tags=["Auth"])
+/workspace/tmp/backend_konanFI9/app/main.py:116:app.include_router(auth_seed.router, prefix="/api/auth", tags=["Auth"])
+/workspace/tmp/backend_konanFI9/app/main.py:117:app.include_router(memory_vector_router, prefix="/api/memory", tags=["Memory"])
+/workspace/tmp/backend_konanFI9/app/main.py:118:app.include_router(chat_router, prefix="/api", tags=["Chat"])
+/workspace/tmp/backend_konanFI9/app/main.py:119:app.include_router(laws.router, prefix="/api/laws", tags=["Laws"])
+/workspace/tmp/backend_konanFI9/app/main.py:120:app.include_router(files.router, prefix="/api/files", tags=["Files"])
+/workspace/tmp/backend_konanFI9/app/main.py:121:app.include_router(conversations.router, prefix="/api/conversations", tags=["Conversations"])
+/workspace/tmp/backend_konanFI9/app/main.py:122:app.include_router(stripe_router.router, prefix="/api/stripe", tags=["Stripe"])
+/workspace/tmp/backend_konanFI9/app/main.py:127:@app.get("/health")
+/workspace/tmp/backend_konanFI9/app/main.py:131:@app.get("/test_db")
+/workspace/tmp/backend_konanFI9/app/memory_vector.py:7:from fastapi import APIRouter, HTTPException
+/workspace/tmp/backend_konanFI9/app/memory_vector.py:86:router = APIRouter(prefix="/api/memory", tags=["Memory Vectorielle"])
+/workspace/tmp/backend_konanFI9/app/memory_vector.py:88:@router.get("/inspect")
+/workspace/tmp/backend_konanFI9/app/memory_vector.py:104:@router.get("/stats")
+/workspace/tmp/backend_konanFI9/app/memory_vector.py:121:@router.delete("/clear")
+/workspace/tmp/backend_konanFI9/app/memory_vector.py:130:@router.get("/ping")
+/workspace/tmp/backend_konanFI9/app/routers/auth_router.py:4:from fastapi import APIRouter, HTTPException, status, Depends
+/workspace/tmp/backend_konanFI9/app/routers/auth_router.py:6:router = APIRouter(prefix="/auth", tags=["Auth (mock)"])
+/workspace/tmp/backend_konanFI9/app/routers/auth_router.py:9:@router.post("/login")
+/workspace/tmp/backend_konanFI9/app/routers/auth_router.py:18:@router.get("/me")
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:5:from fastapi import APIRouter, Depends, HTTPException
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:21:router = APIRouter(prefix="/api", tags=["chat"])
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:51:@router.post("/chat", response_model=ChatResponse)
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:116:@router.get("/health")
+/workspace/tmp/backend_konanFI9/app/routers/files.py:1:from fastapi import APIRouter, Depends, HTTPException
+/workspace/tmp/backend_konanFI9/app/routers/files.py:9:router = APIRouter(prefix="/api/files", tags=["files"], dependencies=[Depends(verify_jwt)])
+/workspace/tmp/backend_konanFI9/app/routers/files.py:11:@router.get("/{file_id}")
+/workspace/tmp/backend_konanFI9/app/routers/laws_router.py:2:from fastapi import APIRouter, Query
+/workspace/tmp/backend_konanFI9/app/routers/laws_router.py:5:router = APIRouter(prefix="/api/laws", tags=["Laws"])
+/workspace/tmp/backend_konanFI9/app/routers/laws_router.py:7:@router.get("/search", summary="Recherche sémantique dans les lois")
+/workspace/tmp/backend_konanFI9/app/routers/memory_vector.py:3:from fastapi import APIRouter
+/workspace/tmp/backend_konanFI9/app/routers/memory_vector.py:7:router = APIRouter(prefix="/memory", tags=["Vector Memory"])
+/workspace/tmp/backend_konanFI9/app/routers/memory_vector.py:21:@router.get("/stats")
+/workspace/tmp/backend_konanFI9/app/routers/stripe_router.py:1:from fastapi import APIRouter, HTTPException, Request, Depends
+/workspace/tmp/backend_konanFI9/app/routers/stripe_router.py:11:router = APIRouter(dependencies=[Depends(verify_jwt)])
+/workspace/tmp/backend_konanFI9/app/routers/stripe_router.py:24:@router.post("/create-checkout-session")
+/workspace/tmp/backend_konanFI9/app/routers/stripe_router.py:59:@router.post("/webhook")
+/workspace/tmp/backend_konanFI9/app/routers/stripe_router.py:71:@router.post("/verify-session")
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:1:from fastapi import APIRouter, Depends, HTTPException, status
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:8:router = APIRouter(prefix="/api/auth", tags=["auth"])
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:10:@router.post("/register", response_model=UserResponse)
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:22:@router.post("/login")
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:30:@router.get("/me", response_model=UserResponse)
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:34:@router.get("/plans")

@@ -1,0 +1,10 @@
+/workspace/konanfi9-web/README.md:48:- Base URL: `process.env.NEXT_PUBLIC_API_BASE_URL`
+/workspace/konanfi9-web/docs/front_audit_tmp/env_usage.txt:4:/workspace/konanfi9-web/README.md:48:- Base URL: `process.env.NEXT_PUBLIC_API_BASE_URL`
+/workspace/konanfi9-web/docs/front_audit_tmp/env_usage.txt:5:/workspace/konanfi9-web/src/app/health/page.tsx:19:  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || '';
+/workspace/konanfi9-web/docs/front_audit_tmp/env_usage.txt:6:/workspace/konanfi9-web/src/app/tester/page.tsx:16:  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || '';
+/workspace/konanfi9-web/docs/front_audit_tmp/env_usage.txt:7:/workspace/konanfi9-web/src/lib/api.ts:3: * - Base URL: process.env.NEXT_PUBLIC_API_BASE_URL
+/workspace/konanfi9-web/docs/front_audit_tmp/env_usage.txt:8:/workspace/konanfi9-web/src/lib/api.ts:42:  const baseUrl = options.baseUrl ?? process.env.NEXT_PUBLIC_API_BASE_URL ?? '';
+/workspace/konanfi9-web/src/app/health/page.tsx:19:  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || '';
+/workspace/konanfi9-web/src/app/tester/page.tsx:16:  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || '';
+/workspace/konanfi9-web/src/lib/api.ts:3: * - Base URL: process.env.NEXT_PUBLIC_API_BASE_URL
+/workspace/konanfi9-web/src/lib/api.ts:42:  const baseUrl = options.baseUrl ?? process.env.NEXT_PUBLIC_API_BASE_URL ?? '';

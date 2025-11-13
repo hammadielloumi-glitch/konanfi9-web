@@ -1,0 +1,86 @@
+/workspace/tmp/backend_konanFI9/app/api/admin_update.py:14:@router.post("/reindex")
+/workspace/tmp/backend_konanFI9/app/api/admin_update.py:20:@router.post("/update")
+/workspace/tmp/backend_konanFI9/app/api/api.py:6:@router.post("/upsert")
+/workspace/tmp/backend_konanFI9/app/api/api.py:15:@router.get("/")
+/workspace/tmp/backend_konanFI9/app/api/auth.py:35:@router.post("/register")
+/workspace/tmp/backend_konanFI9/app/api/auth.py:36:def register_user(p: UserCreate, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/auth.py:56:@router.post("/login")
+/workspace/tmp/backend_konanFI9/app/api/auth.py:57:def login_user(p: Login, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/auth.py:94:def _current_user(creds: HTTPAuthorizationCredentials = Depends(bearer), db: Session = Depends(get_db)) -> User:
+/workspace/tmp/backend_konanFI9/app/api/auth.py:99:    creds: HTTPAuthorizationCredentials | None = Depends(bearer),
+/workspace/tmp/backend_konanFI9/app/api/auth.py:100:    db: Session = Depends(get_db),
+/workspace/tmp/backend_konanFI9/app/api/auth.py:110:@router.get("/me")
+/workspace/tmp/backend_konanFI9/app/api/auth.py:111:def me(user: User = Depends(current_user)):
+/workspace/tmp/backend_konanFI9/app/api/auth_seed.py:11:@router.post("/seed-test-user")
+/workspace/tmp/backend_konanFI9/app/api/auth_seed.py:12:def seed_test_user(db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/files.py:20:@router.post("/upload", summary="Uploader un fichier vers le serveur")
+/workspace/tmp/backend_konanFI9/app/api/files.py:21:async def upload_file(file: UploadFile = File(...), db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/files.py:53:@router.get("/list", summary="Lister les fichiers enregistrés")
+/workspace/tmp/backend_konanFI9/app/api/files.py:54:def list_files(db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/files.py:69:@router.delete("/{file_id}", summary="Supprimer un fichier")
+/workspace/tmp/backend_konanFI9/app/api/files.py:70:def delete_file(file_id: int, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/health.py:7:@router.get("/health")
+/workspace/tmp/backend_konanFI9/app/api/health.py:8:def health_check(db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/laws.py:18:@router.get("/search")
+/workspace/tmp/backend_konanFI9/app/api/laws.py:27:@router.post("/reindex")
+/workspace/tmp/backend_konanFI9/app/api/laws.py:37:@router.get("/stats")
+/workspace/tmp/backend_konanFI9/app/api/laws.py:47:@router.get("/all")
+/workspace/tmp/backend_konanFI9/app/api/laws.py:54:@router.get("/{law_id}")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:85:@router.get("/search_law")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:93:@router.post("/index_laws")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:107:@router.delete("/reset_laws")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:124:@router.get("/stats_laws")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:178:@router.get("/notifications")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:193:@router.post("/notifications/mark_as_read")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:217:@router.post("/load_laws_from_url")
+/workspace/tmp/backend_konanFI9/app/api/lawsold.py:283:@router.post("/laws/compare_version")
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:16:    dependencies=[Depends(verify_jwt)]
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:23:@router.get("")
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:25:    db: Session = Depends(get_db),
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:56:@router.post("")
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:57:async def create_conversation(request: Request, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:82:@router.patch("/{conv_id}")
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:83:def update_conversation(conv_id: int, data: dict, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:99:@router.delete("/{conv_id}")
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:100:def delete_conversation(conv_id: int, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:112:@router.get("/{conv_id}/messages")
+/workspace/tmp/backend_konanFI9/app/api/routes/conversations.py:115:    db: Session = Depends(get_db),
+/workspace/tmp/backend_konanFI9/app/api/search.py:6:@router.post("/upsert")
+/workspace/tmp/backend_konanFI9/app/api/search.py:15:@router.get("/")
+/workspace/tmp/backend_konanFI9/app/api.py:19:@router.post("/auth/register", response_model=UserOut)
+/workspace/tmp/backend_konanFI9/app/api.py:20:def register(data: UserCreate, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api.py:30:@router.post("/auth/login", response_model=Token)
+/workspace/tmp/backend_konanFI9/app/api.py:31:def login(data: UserCreate, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api.py:40:@router.post("/seed")
+/workspace/tmp/backend_konanFI9/app/api.py:41:def seed_laws(db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/api.py:64:@router.post("/chat", response_model=ChatResponse)
+/workspace/tmp/backend_konanFI9/app/api.py:89:@router.post("/pdf")
+/workspace/tmp/backend_konanFI9/app/core/security.py:52:def verify_jwt(credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme)) -> Dict[str, Any]:
+/workspace/tmp/backend_konanFI9/app/main.py:127:@app.get("/health")
+/workspace/tmp/backend_konanFI9/app/main.py:131:@app.get("/test_db")
+/workspace/tmp/backend_konanFI9/app/memory_vector.py:88:@router.get("/inspect")
+/workspace/tmp/backend_konanFI9/app/memory_vector.py:104:@router.get("/stats")
+/workspace/tmp/backend_konanFI9/app/memory_vector.py:121:@router.delete("/clear")
+/workspace/tmp/backend_konanFI9/app/memory_vector.py:130:@router.get("/ping")
+/workspace/tmp/backend_konanFI9/app/routers/auth_router.py:9:@router.post("/login")
+/workspace/tmp/backend_konanFI9/app/routers/auth_router.py:18:@router.get("/me")
+/workspace/tmp/backend_konanFI9/app/routers/auth_router.py:23:def get_current_user(token: str = Depends(lambda: None)):
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:51:@router.post("/chat", response_model=ChatResponse)
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:52:async def chat_endpoint(request: ChatRequest, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/routers/chat.py:116:@router.get("/health")
+/workspace/tmp/backend_konanFI9/app/routers/files.py:9:router = APIRouter(prefix="/api/files", tags=["files"], dependencies=[Depends(verify_jwt)])
+/workspace/tmp/backend_konanFI9/app/routers/files.py:11:@router.get("/{file_id}")
+/workspace/tmp/backend_konanFI9/app/routers/files.py:12:def get_uploaded_file(file_id: str, db: Session = Depends(get_db), user=Depends(verify_jwt)):
+/workspace/tmp/backend_konanFI9/app/routers/laws_router.py:7:@router.get("/search", summary="Recherche sémantique dans les lois")
+/workspace/tmp/backend_konanFI9/app/routers/memory_vector.py:21:@router.get("/stats")
+/workspace/tmp/backend_konanFI9/app/routers/stripe_router.py:11:router = APIRouter(dependencies=[Depends(verify_jwt)])
+/workspace/tmp/backend_konanFI9/app/routers/stripe_router.py:24:@router.post("/create-checkout-session")
+/workspace/tmp/backend_konanFI9/app/routers/stripe_router.py:59:@router.post("/webhook")
+/workspace/tmp/backend_konanFI9/app/routers/stripe_router.py:71:@router.post("/verify-session")
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:10:@router.post("/register", response_model=UserResponse)
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:11:def register(user: UserCreate, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:22:@router.post("/login")
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:23:def login(data: UserLogin, db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:30:@router.get("/me", response_model=UserResponse)
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:31:def me(db: Session = Depends(get_db)):
+/workspace/tmp/backend_konanFI9/app/routers/user_router.py:34:@router.get("/plans")
