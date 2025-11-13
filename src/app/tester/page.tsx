@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { apiRequest } from "@/lib/api";
+import { apiRequest, HttpMethod } from "@/lib/api";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 export default function TesterPage() {
   const [path, setPath] = useState("/health");
-  const [method, setMethod] = useState("GET");
+  const [method, setMethod] = useState<HttpMethod>("GET");
   const [body, setBody] = useState("");
   const [response, setResponse] = useState<any>(null);
 
@@ -23,7 +23,8 @@ export default function TesterPage() {
       return;
     }
 
-    const res = await apiRequest(path, method as any, payload);
+    // ✅ FI9_NAYEK : Typage strict HttpMethod au lieu de 'as any'
+    const res = await apiRequest(path, method, payload);
     setResponse(res);
   }
 
@@ -37,7 +38,7 @@ export default function TesterPage() {
       <select
         className="border p-2 rounded"
         value={method}
-        onChange={(e) => setMethod(e.target.value)}
+        onChange={(e) => setMethod(e.target.value as HttpMethod)}
       >
         <option>GET</option>
         <option>POST</option>

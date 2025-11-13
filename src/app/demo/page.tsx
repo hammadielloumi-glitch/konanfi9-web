@@ -24,7 +24,8 @@ export default function DemoPage() {
         return;
       }
 
-      setData(res.data || []);
+      // 🔥 FIX FI9_NAYEK
+      setData(Array.isArray(res.data) ? res.data : []);
     }
 
     load();

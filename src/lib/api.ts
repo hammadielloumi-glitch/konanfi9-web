@@ -9,10 +9,10 @@ export type ApiResponse<T = unknown> = {
   error?: string;
 };
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "";
 
-if (!API_BASE_URL) {
-  console.warn("NEXT_PUBLIC_API_BASE_URL is not defined.");
+if (!process.env.NEXT_PUBLIC_API_BASE_URL) {
+  console.warn("NEXT_PUBLIC_API_BASE_URL is not defined. Using empty string as fallback.");
 }
 
 export async function apiRequest<T = unknown>(
@@ -30,20 +30,29 @@ export async function apiRequest<T = unknown>(
   };
 
   try {
-    const res = await fetch(`${API_BASE_URL}${path}`, {
+    const url = `${API_BASE_URL}${path}`;
+    const res = await fetch(url, {
       method,
       headers,
       body: body ? JSON.stringify(body) : undefined,
     });
 
     const contentType = res.headers.get("content-type");
-    const json = contentType?.includes("application/json") ? await res.json() : null;
+    let json: T | null = null;
+    
+    if (contentType?.includes("application/json")) {
+      try {
+        json = (await res.json()) as T;
+      } catch (e) {
+        // Si le JSON est invalide, json reste null
+      }
+    }
 
     return {
       ok: res.ok,
       status: res.status,
       data: json ?? undefined,
-      error: !res.ok ? json?.detail || "Unknown error" : undefined,
+      error: !res.ok ? (json && typeof json === "object" && "detail" in json ? String(json.detail) : "Unknown error") : undefined,
     };
   } catch (error) {
     return {
